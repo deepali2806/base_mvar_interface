@@ -1,0 +1,59 @@
+(lang dune 3.4)
+(name base_mvar_interface)
+(sections (lib .) (libexec .) (doc ../../doc/base_mvar_interface))
+(files
+ (lib
+  (META
+   MVar.ml
+   MVar.mli
+   base_mvar_interface.a
+   base_mvar_interface.cma
+   base_mvar_interface.cmi
+   base_mvar_interface.cmt
+   base_mvar_interface.cmx
+   base_mvar_interface.cmxa
+   base_mvar_interface.ml
+   base_mvar_interface__MVar.cmi
+   base_mvar_interface__MVar.cmt
+   base_mvar_interface__MVar.cmti
+   base_mvar_interface__MVar.cmx
+   base_mvar_interface__Sched.cmi
+   base_mvar_interface__Sched.cmt
+   base_mvar_interface__Sched.cmti
+   base_mvar_interface__Sched.cmx
+   dune-package
+   opam
+   sched.ml
+   sched.mli))
+ (libexec (base_mvar_interface.cmxs))
+ (doc (README.md)))
+(library
+ (name base_mvar_interface)
+ (kind normal)
+ (archives (byte base_mvar_interface.cma) (native base_mvar_interface.cmxa))
+ (plugins (byte base_mvar_interface.cma) (native base_mvar_interface.cmxs))
+ (native_archives base_mvar_interface.a)
+ (requires lwt lwt.unix)
+ (main_module_name Base_mvar_interface)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Base_mvar_interface)
+   (modules
+    ((name MVar)
+     (obj_name base_mvar_interface__MVar)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Sched)
+     (obj_name base_mvar_interface__Sched)
+     (visibility public)
+     (impl)
+     (intf)))
+   (alias_module
+    (name Base_mvar_interface)
+    (obj_name base_mvar_interface)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))

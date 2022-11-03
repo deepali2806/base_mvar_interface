@@ -1,0 +1,6 @@
+description = ""
+requires = "lwt lwt.unix"
+archive(byte) = "base_mvar_interface.cma"
+archive(native) = "base_mvar_interface.cmxa"
+plugin(byte) = "base_mvar_interface.cma"
+plugin(native) = "base_mvar_interface.cmxs"

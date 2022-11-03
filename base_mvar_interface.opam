@@ -1,0 +1,18 @@
+opam-version: "2.0"
+maintainer: "Deepali Ande <deepaliande.1@gmail.com>"
+authors: ["Deepali Ande <deepaliande.1@gmail.com>"]
+homepage: "https://github.com/deepali2806/base_mvar_interface"
+doc: "https://github.com/deepali2806/base_mvar_interface/blob/main/README.md"
+synopsis: "Unified interface for composition of different schedulers "
+license: "ISC"
+dev-repo: "git+https://github.com/deepali2806/base_mvar_interface.git"
+bug-reports: "https://github.com/deepali2806/base_mvar_interface/issues"
+tags: []
+depends: [
+  "ocamlfind" {build}
+  "dune" {build}
+]
+depopts: []
+build: [
+  "dune" "build" "-p" name
+]
