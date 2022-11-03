@@ -1,5 +1,0 @@
-(library
- (name base_mvar_interface)
- (public_name base_mvar_interface)
- (libraries lwt lwt.unix)
- )

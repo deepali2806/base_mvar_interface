@@ -1,6 +1,0 @@
-(** @canonical Base_mvar_interface.MVar *)
-module MVar = Base_mvar_interface__MVar
-
-
-(** @canonical Base_mvar_interface.Sched *)
-module Sched = Base_mvar_interface__Sched
